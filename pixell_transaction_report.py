@@ -35,10 +35,17 @@ try:
             # Extract the transaction type from the second column
             transaction_type = row[1]
             ### VALIDATION 1 ###
+            if transaction_type not in valid_transaction_types:
+                valid_record = False
+                error_message += "the record has an invalid transaction type."
 
             # Extract the transaction amount from the third column
             ### VALIDATION 2 ###
-            transaction_amount = float(row[2])
+            try:
+                transaction_amount = float(row[2])
+            except ValueError:
+                    valid_record = False
+                    error_message += "the record has a non-numeric transaction amount."
 
             if valid_record:
                 # Initialize the customer's account balance if it doesn't already exist
@@ -80,6 +87,6 @@ try:
     for record in rejected_records:
         print("REJECTED:", record)
 except FileNotFoundError as e:
-    print("File does not exist", e)
+    print("ERROR:" , e)
 except Exception as e:
-    print("General Exception", e)
+    print("ERROR:" , e)
