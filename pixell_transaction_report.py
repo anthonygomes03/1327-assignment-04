@@ -14,7 +14,6 @@ valid_transaction_types = ['deposit', 'withdraw']
 customer_data = {}
 rejected_records = []
 transaction_count = 0
-transaction_counter = 0
 total_transaction_amount = 0
 valid_record = True
 error_message = ''
@@ -83,7 +82,7 @@ try:
             amount, type = transaction
             print(f"\t{type.capitalize()}: {amount}")
 
-    print(f"\nAVERAGE TRANSACTION AMOUNT: {(total_transaction_amount / transaction_counter)}")
+    print(f"\nAVERAGE TRANSACTION AMOUNT: {(total_transaction_amount / transaction_count)}")
 
     print("\nREJECTED RECORDS\n================")
     for record in rejected_records:
