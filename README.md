@@ -1,24 +1,20 @@
-# [Project Name]
+# [Assignment 4]
 
 ## Description
 
-[Provide the module number to which the project applies]
+[COMP-1327]
 
 ## Author
 
-[Your name]
+[Anthony Gomes]
 
 ## Assignment
 
-[Indicate the name and description of the assignment the project is related to]
-
-## [Program Name]
-
-[Describe the tools and techniques you'll use to improve the quality of the PiXELL Transaction Report.]
+[This assignment involves troubleshooting an existing program to locate and correct logic errors. In addition, I will use exception handling to anticipate and handle potential exceptions which could lead to unexpected results and/or program crashes.]
 
 ## Code Modification
 
-[Indicate the modification(s) made and the purpose of the modification(s)]
+[I modified the code in the pixell_transaction_report.py program to handle any exception thrown if the input file cannot be located. I did this by using try and except blocks to look for errors and if any errors were found, I made it so that it would print a message saying which error it was.]
 
 ## Code Modification
 
@@ -27,3 +23,15 @@
 ## Code Modification
 
 [As a result of troubleshooting I found directly under the "# Update the customer's account balance based on the transaction type" that there was an "elif" instead of an "if" which was causesing the code to skip updating the customer's account balance based on the transaction type if it was the first instance of a customer's id showing up in the bank data.]
+
+## Code Modification
+
+[I found that "transaction counter" was redundant and I only needed transaction count.]
+
+## Code Modification
+
+[I had to write code so that the reader would skip the first line in the bank data file. it kept reading the names of the columns and registering them as invalid records. Those are just place holder names so and don't need to be read by the reader going through the bank data file.]
+
+## Code Modification
+
+[I fixed a typo in line 61 that said withdrawal instead of withdraw which was making the code skip over a chunk not allowing the calculation to be correct]
